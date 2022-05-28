@@ -35,8 +35,7 @@ function Index() {
     var books = [];
     if (auth.currentUser) {
       var favourite = await userApi.getFavourite(auth.currentUser.uid);
-      var books = await bookApi.getBookswithBookIds(favourite);
-      console.log(books);
+      books = await bookApi.getBookswithBookIds(favourite);
       setRecommendations(books);
       setLoading(false);
     }

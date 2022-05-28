@@ -16,7 +16,6 @@ import BookMovie from "./pages/BookMovie";
 
 function App() {
   const [isAuth, setIsAuth] = React.useState(auth.currentUser !== null);
-  console.log(auth.currentUser);
   return (
     <>
       <AppAppBar setIsAuth={setIsAuth} isAuth={isAuth} />

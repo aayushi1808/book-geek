@@ -31,7 +31,6 @@ function Index() {
     if (auth.currentUser) {
       var userDoc = await userApi.getUser(auth.currentUser.uid);
       const userData = userDoc.data();
-      console.log(userData);
       if (userData.genres) {
         books = await recommendationApi.getBookPredictionWithGenre(
           userData.genres
@@ -45,7 +44,6 @@ function Index() {
       var genres = ["Adventure", "Science Fiction", "Politics"];
       books = await recommendationApi.getBookPredictionWithGenre(genres);
     }
-    console.log(books);
     setRecommendations(books);
     setLoading(false);
   };

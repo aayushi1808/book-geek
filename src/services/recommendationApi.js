@@ -5,7 +5,6 @@ export const getBookPredictionWithGenre = async (genres) => {
   var data = [];
   for (var i = 0; i < 3; i++) {
     var book = await bookApi.getBookWithGenre(genres[i]);
-    console.log(book);
     var response = await fetch(
       `https://glacial-hamlet-68829.herokuapp.com/predict?id=${book.BookId}&size=4`
     );
@@ -13,14 +12,12 @@ export const getBookPredictionWithGenre = async (genres) => {
     data.push(json);
   }
   data = normaliseData(data);
-  console.log(data);
   return await bookApi.getBookswithBookIds(data);
 };
 
 export const getBookPredictionWithHistory = async (userId) => {
   var data = [];
   var historyBookIds = await userApi.getHistory(userId, 3);
-  console.log(historyBookIds);
   for (var i = 0; i < historyBookIds.length; i++) {
     var bookId = historyBookIds[i];
     var response = await fetch(
@@ -30,7 +27,6 @@ export const getBookPredictionWithHistory = async (userId) => {
     data.push(json);
   }
   data = normaliseData(data);
-  console.log(data);
   return await bookApi.getBookswithBookIds(data);
 };
 

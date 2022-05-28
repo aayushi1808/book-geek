@@ -42,8 +42,7 @@ function Index() {
     var books = [];
     if (auth.currentUser) {
       var history = await userApi.getHistory(auth.currentUser.uid, 20);
-      var books = await bookApi.getBookswithBookIds(history);
-      console.log(books);
+      books = await bookApi.getBookswithBookIds(history);
       setRecommendations(books);
       setLoading(false);
     }

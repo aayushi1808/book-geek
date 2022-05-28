@@ -44,7 +44,6 @@ export const getBookswithBookIds = async (bookIds) => {
     const bookQuery = query(bookRef, where("BookId", "in", bookId));
     const bookSnaps = await getDocs(bookQuery);
     var temp = bookSnaps.docs.map((doc) => doc.data());
-    console.log(temp);
     books = [...books, ...temp];
   }
   return books;

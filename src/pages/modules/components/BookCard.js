@@ -30,7 +30,6 @@ export default function BookCard({
 
   const favouriteBook = async (id) => {
     if (auth.currentUser) {
-      console.log(id);
       var added = await userApi.addRemoveFavourite(auth.currentUser.uid, id);
       setMessage(
         added ? "Book added to Read Later" : "Book removed from Read Later"

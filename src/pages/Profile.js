@@ -26,7 +26,6 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 function Profile() {
   const navigate = useNavigate();
-  console.log(auth.currentUser);
 
   React.useEffect(() => {
     if (auth.currentUser === null) {
@@ -36,7 +35,6 @@ function Profile() {
         if (userDoc.exists()) {
           var user = userDoc.data();
           if (user.genres) {
-            console.log(user.genres);
             setState([...user.genres]);
           }
           setLoading(false);
@@ -51,10 +49,8 @@ function Profile() {
   const handleChange = (event) => {
     if (event.target.checked) {
       setState([...state, event.target.name]);
-      console.log(state);
     } else {
       setState([...state.filter((item) => item !== event.target.name)]);
-      console.log(state);
     }
   };
   const error = state.length < 3;
@@ -79,7 +75,6 @@ function Profile() {
     setLoading(false);
     setMessage("Added genres to your profile");
     setOpen(true);
-    console.log("submit");
     // navigate("/");
   };
 

@@ -10,14 +10,12 @@ import { auth } from "../services/firebaseService";
 
 function ReadBook() {
   var { id } = useParams();
-  console.log(id);
   var [book, setBook] = React.useState(null);
   var [loading, setLoading] = React.useState(true);
   React.useEffect(() => {
     bookApi.getBookWithBookId(id).then(async (bookDoc) => {
       if (bookDoc.exists()) {
         var book = bookDoc.data();
-        console.log(book);
         setBook(book);
         if (auth.currentUser) {
           await userApi.addBookRead(auth.currentUser.uid, book.BookId);

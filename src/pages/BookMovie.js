@@ -27,7 +27,6 @@ function Index() {
 
   const fetchData = async () => {
     var books = await bookApi.getBookMovies();
-    console.log(books);
     setRecommendations(books);
     setLoading(false);
   };

@@ -50,7 +50,6 @@ function AppAppBar({ isAuth, setIsAuth }) {
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then(async (result) => {
-      console.log(result);
       var userDoc = await userApi.getUser(result.user.uid);
       if (!userDoc.exists()) {
         await userApi.createUser(result.user.uid, {
