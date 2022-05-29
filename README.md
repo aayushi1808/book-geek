@@ -46,6 +46,7 @@ Use Book-Geek to get recommendation for your next eBook on [Project Gutenberg](h
 
 ## Useful Links
 
+- [Recommendation System Repo](https://github.com/aayushi1808/book_recommendation_api)
 - [Deployed Website](https://aayushi1808.github.io/book-geek/)
 - [Demo Video](https://youtu.be/gdcyUI-bHsI)
 - [Sprint Document](https://docs.google.com/presentation/d/1ZGB1QOrz93SE_ZGxAjw52iBGq8OfslAtBEZXS_cLoQU/edit?usp=sharing)
