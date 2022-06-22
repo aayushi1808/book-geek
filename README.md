@@ -22,7 +22,7 @@ Use Book-Geek to get recommendation for your next eBook on [Project Gutenberg](h
     - ![image](https://i.imgur.com/WoPu9fk.png)
 
 4. Read Later Page
-    - You can see the books you marked for chrcking out later.
+    - You can see the books you marked for checking out later.
     - ![image](https://i.imgur.com/NmPDPoE.png)
 
 5. Movies Based On Books
